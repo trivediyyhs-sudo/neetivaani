@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useAuth } from "@workspace/replit-auth-web";
 
 const TRANSLATIONS = {
   en: {
@@ -23,6 +24,8 @@ const TRANSLATIONS = {
       impact: "Impact",
       track: "Track Submission",
       login: "Login",
+      logout: "Sign Out",
+      account: "Account",
       join: "Waitlist",
       submit: "Submit Grievance"
     },
@@ -49,6 +52,8 @@ const TRANSLATIONS = {
       impact: "प्रभाव",
       track: "स्थिति ट्रैक करें",
       login: "लॉग इन करें",
+      logout: "साइन आउट",
+      account: "खाता",
       join: "प्रतीक्षा सूची",
       submit: "शिकायत दर्ज करें"
     },
@@ -81,7 +86,8 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { toast } = useToast();
-  
+  const { user, isAuthenticated, isLoading: isAuthLoading, login, logout } = useAuth();
+
   const t = TRANSLATIONS[lang];
 
   useEffect(() => {
@@ -152,12 +158,42 @@ export default function Home() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <button 
-              onClick={() => handleDemoAction("Login")}
-              className={`text-sm font-medium transition-colors ${isScrolled ? "text-slate-600 hover:text-nitivaani-navy" : "text-slate-300 hover:text-white"}`}
-            >
-              {t.nav.login}
-            </button>
+            {isAuthLoading ? (
+              <div className={`h-5 w-16 rounded animate-pulse ${isScrolled ? "bg-slate-200" : "bg-white/10"}`} />
+            ) : isAuthenticated && user ? (
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
+                  {user.profileImageUrl ? (
+                    <img
+                      src={user.profileImageUrl}
+                      alt={user.firstName ?? user.email ?? t.nav.account}
+                      className="w-8 h-8 rounded-full object-cover ring-2 ring-nitivaani-emerald/40"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <div className="w-8 h-8 rounded-full bg-nitivaani-emerald/20 text-nitivaani-emerald flex items-center justify-center text-xs font-semibold">
+                      {(user.firstName?.[0] ?? user.email?.[0] ?? "U").toUpperCase()}
+                    </div>
+                  )}
+                  <span className={`text-sm font-medium hidden xl:inline ${isScrolled ? "text-slate-700" : "text-white"}`}>
+                    {user.firstName ?? user.email ?? t.nav.account}
+                  </span>
+                </div>
+                <button
+                  onClick={logout}
+                  className={`text-sm font-medium transition-colors ${isScrolled ? "text-slate-600 hover:text-nitivaani-navy" : "text-slate-300 hover:text-white"}`}
+                >
+                  {t.nav.logout}
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={login}
+                className={`text-sm font-medium transition-colors ${isScrolled ? "text-slate-600 hover:text-nitivaani-navy" : "text-slate-300 hover:text-white"}`}
+              >
+                {t.nav.login}
+              </button>
+            )}
             <Button 
               onClick={() => handleDemoAction("Track")}
               variant="outline" 
@@ -209,6 +245,43 @@ export default function Home() {
                     {t.nav.submit}
                   </Button>
                 </div>
+                {!isAuthLoading && (
+                  isAuthenticated && user ? (
+                    <div className="flex items-center justify-between mt-2 pt-3 border-t border-slate-100">
+                      <div className="flex items-center gap-2 min-w-0">
+                        {user.profileImageUrl ? (
+                          <img
+                            src={user.profileImageUrl}
+                            alt={user.firstName ?? user.email ?? t.nav.account}
+                            className="w-8 h-8 rounded-full object-cover ring-2 ring-nitivaani-emerald/40"
+                            referrerPolicy="no-referrer"
+                          />
+                        ) : (
+                          <div className="w-8 h-8 rounded-full bg-nitivaani-emerald/20 text-nitivaani-emerald flex items-center justify-center text-xs font-semibold">
+                            {(user.firstName?.[0] ?? user.email?.[0] ?? "U").toUpperCase()}
+                          </div>
+                        )}
+                        <span className="text-sm font-medium text-slate-700 truncate">
+                          {user.firstName ?? user.email ?? t.nav.account}
+                        </span>
+                      </div>
+                      <button
+                        onClick={() => { setIsMobileMenuOpen(false); logout(); }}
+                        className="text-sm font-medium text-slate-600 hover:text-nitivaani-navy"
+                      >
+                        {t.nav.logout}
+                      </button>
+                    </div>
+                  ) : (
+                    <Button
+                      variant="ghost"
+                      onClick={() => { setIsMobileMenuOpen(false); login(); }}
+                      className="w-full mt-2 text-slate-700"
+                    >
+                      {t.nav.login}
+                    </Button>
+                  )
+                )}
               </div>
             </motion.div>
           )}
