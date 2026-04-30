@@ -1,0 +1,37 @@
+uploads = []
+
+[[generated]]
+id = "TW6uP0W3Eq-mCFvq5AcVm"
+uri = "file://attached_assets/brand/nitivaani_logo_mark.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Hy3kU6bISSvi4OMUolsWi"
+uri = "file://attached_assets/brand/nitivaani_favicon.png"
+type = "image"
+title = "generated_image"
+
+[[outputs]]
+id = "S9kcXniXWdE5wZYrP14Rh"
+uri = "file://attached_assets/brand/nitivaani_logo_mark_transparent.png"
+type = "image"
+title = "Nitivaani Logo (transparent)"
+
+[[outputs]]
+id = "4c_A9WLLG7tWuJJxEdP1I"
+uri = "file://attached_assets/brand/nitivaani_favicon_transparent.png"
+type = "image"
+title = "Nitivaani Favicon (transparent)"
+
+[[outputs]]
+id = "dzd5EzJ9T1ZiLnPbvh806"
+uri = "file://attached_assets/brand/nitivaani_logo_mark.png"
+type = "image"
+title = "Nitivaani Logo (white background)"
+
+[[outputs]]
+id = "JWIFq__VSr3V1LzY24zMH"
+uri = "file://attached_assets/brand/nitivaani_favicon.png"
+type = "image"
+title = "Nitivaani Favicon (white background)"

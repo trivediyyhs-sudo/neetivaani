@@ -1,0 +1,52 @@
+Build a world-class, futuristic and highly professional landing page for an AI-powered Indian GovTech startup called “Nitivaani”. The landing page should feel like a billion-dollar technology company that combines the innovation of modern AI startups with the trust and authority of national digital infrastructure. The website must immediately communicate intelligence, transparency, credibility, scalability and national impact while remaining simple enough for ordinary Indian citizens to understand and use.
+
+The overall visual style should take inspiration from Notion, Tesla, Linear and Perplexity with a refined GovTech identity. Use the provided logo, typography direction, colors and visual language as the core design system for the website. The design should balance futuristic AI aesthetics with institutional trust and public accessibility. The experience should feel cinematic, premium, elegant and technologically advanced while still feeling practical and grounded in real civic problem-solving.
+
+Use a mixed adaptive theme with premium light and dark sections throughout the website. The interface should include subtle glassmorphism, soft shadows, futuristic gradients, glowing AI-inspired accents, premium motion effects, clean geometric layouts and modern spacing hierarchy. Use smooth transitions and high-end animations across the page including scroll animations, floating elements, animated grids, glowing particles, interactive hover effects and AI-inspired motion graphics. The motion design should feel premium and futuristic without becoming distracting.
+
+The primary goal of the landing page is to encourage users to submit grievances, build public trust, attract government partnerships and position Nitivaani as a scalable investor-grade GovTech platform. The platform should feel like the future operating system for citizen-government communication in India.
+
+The landing page should target general Indian citizens, government departments, NGOs, corporates, investors, students, youth, rural users and urban users simultaneously. The messaging should feel inclusive, intelligent and nationally impactful while still remaining modern and startup-oriented.
+
+The website should support multiple languages with a language switcher positioned above the main navigation header. Include English, Hindi and future regional language support options. The language switcher should feel elegant and modern instead of traditional or outdated.
+
+The navigation header should be minimal, sticky and highly polished. Include navigation items such as Features, How It Works, Vision, Impact, Track Submission, Login/Signup and Join Waitlist. Include CTA buttons for “Submit a Grievance”, “Track Submission” and “Request Demo”. The navigation should feel premium and smooth with subtle hover animations and glowing active states.
+
+The hero section should feel cinematic and futuristic with a strong emotional and technological impact. Use a visually stunning AI-governance-inspired background with digital India aesthetics, subtle network visualizations, futuristic infrastructure graphics and floating interface previews. Include a large bold headline such as “Your Voice Can Shape India’s Future” with a powerful supporting paragraph explaining that Nitivaani uses AI to connect citizens directly with the right authorities for faster action, accountability and transparent governance. Add multiple premium CTA buttons including “Submit a Grievance”, “Join Waitlist”, “Track Submission” and “Partner With Us”. Add animated floating dashboard previews and AI routing visuals around the hero section.
+
+Directly below the hero section, create a trust and credibility section designed to make users instantly feel that this platform is authentic, scalable and government-ready. Include trust indicators such as AI-powered governance, secure infrastructure, accessibility-first design, multilingual support and transparent tracking systems. Use animated statistics cards showing projected grievances resolved, AI routing accuracy, response speed improvement, government department integrations and citizen participation metrics. Make the section feel institutional yet modern.
+
+Create a highly visual “How It Works” section using a futuristic timeline layout with animated cards and premium motion effects. Step one should show citizens submitting grievances using text, voice, images or documents. Step two should show AI intelligently routing complaints to the correct department using machine learning and analytics. Step three should show live tracking, department responses and transparent resolution workflows. Use elegant icons, modern UI previews and smooth interactive animations.
+
+Create a powerful features section showcasing the core capabilities of the platform. Highlight AI complaint routing, real-time grievance tracking, accessibility tools, voice complaint support, multilingual interaction, AI assistant integration, anonymous reporting, department analytics, live transparency dashboards and smart notifications. Each feature card should include futuristic visuals, glowing hover effects and premium typography. The layout should feel like an enterprise-grade AI platform presentation.
+
+Create an “Impact & Transparency” section that visually demonstrates how the platform can improve governance across India. Use animated maps, data visualization cards, futuristic charts and interactive metrics showing issue resolution efficiency, transparency improvements, citizen participation and governance modernization. Make the section feel highly scalable and investor-ready.
+
+Create a dedicated “Vision” section that positions Nitivaani as the future infrastructure layer for AI-powered civic engagement in India. Discuss long-term scalability, AI governance infrastructure, digital democracy and nationwide accessibility. Use bold typography, futuristic layouts and immersive motion design to create a visionary startup atmosphere.
+
+Create a “Market Opportunity” section aimed at investors and institutional partners. Present the scale of governance inefficiencies, digital transformation opportunities and the need for AI-enabled citizen-government communication systems. Use clean modern infographics, enterprise-style presentation layouts and premium charts inspired by startup investor decks.
+
+Create a “Scalability” section that explains how Nitivaani can expand across states, municipalities, government departments and public institutions. Include AI infrastructure diagrams, API ecosystem concepts, multi-department workflow systems and nationwide digital governance architecture visuals.
+
+Add a premium live dashboard preview section showing:
+- grievance submission portal
+- real-time tracking interface
+- AI routing system
+- department dashboard
+- accessibility settings
+- multilingual interface
+- AI assistant interaction
+
+The dashboard previews should feel modern, elegant and enterprise-grade similar to advanced SaaS platforms.
+
+Create a testimonials section positioned just above the footer. Use elegant floating testimonial cards with soft shadows and subtle motion. Include citizen feedback, NGO perspectives, youth voices and institutional reactions. The design should feel trustworthy, emotional and aspirational without appearing overly corporate.
+
+The footer should take inspiration from the provided branding image and should feel extremely premium and structured. Use a visually rich footer with dark futuristic styling, subtle gradients and glowing separators. Include sections for FAQ, Contact, AI Infrastructure, Company Vision, Privacy Policy, Terms & Conditions, Careers, Social Media Handles, Government Partnerships and Support. Include company contact number, business email, office address and a dedicated “Request Government Partnership” CTA. Add “MADE IN INDIA 🇮🇳” prominently but elegantly in the footer.
+
+The overall copywriting style should balance simple public-friendly communication with startup-tech sophistication and inspirational messaging. Every section should make users feel:
+“This is the future of governance.”
+“This platform feels trustworthy.”
+“This looks like a unicorn startup.”
+“This can genuinely solve civic problems.”
+
+The entire website should be optimized primarily for desktop viewing with highly polished layouts, cinematic spacing and modern enterprise-grade responsiveness. The final result should feel like the official website of a nationally significant AI governance company capable of attracting citizens, investors, media attention and government partnerships simultaneously.
