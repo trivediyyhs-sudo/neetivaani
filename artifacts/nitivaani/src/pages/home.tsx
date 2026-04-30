@@ -6,7 +6,7 @@ import {
   Activity, CheckCircle2, MessageSquare, Mic, 
   FileText, Smartphone, Users, MapPin, BarChart3,
   Building, Eye, Play, Sparkles, Database, Server, ServerCrash, 
-  ChevronRight, Network
+  ChevronRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -577,32 +577,41 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="flex-1 relative bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden flex items-center justify-center">
-                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
-                  
-                  {/* Abstract India Map visualization */}
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    <Network className="w-64 h-64 text-nitivaani-navy/10 absolute" />
-                    
-                    {/* Data nodes */}
+                <div className="flex-1 relative bg-[#f5f0e6] rounded-2xl border border-slate-200 overflow-hidden flex items-center justify-center">
+                  {/* Real cartographic map of India (OpenStreetMap style) */}
+                  <img
+                    src="/india-map.png"
+                    alt="Map of India showing Nitivaani's national reach"
+                    className="absolute inset-0 w-full h-full object-cover object-center select-none pointer-events-none"
+                    draggable={false}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/0 to-white/40"></div>
+
+                  {/* City pins overlaid on the real map. Coords in % match the actual cities on the cropped India tile. */}
+                  <div className="relative w-full h-full">
                     {[
-                      { top: '30%', left: '40%', size: 'w-4 h-4', label: 'Delhi', delay: 0 },
-                      { top: '60%', left: '35%', size: 'w-6 h-6', label: 'Mumbai', delay: 1 },
-                      { top: '65%', left: '45%', size: 'w-8 h-8', label: 'Bengaluru', delay: 2 },
-                      { top: '45%', left: '60%', size: 'w-3 h-3', label: 'Kolkata', delay: 0.5 },
-                      { top: '55%', left: '50%', size: 'w-5 h-5', label: 'Hyderabad', delay: 1.5 },
-                      { top: '40%', left: '30%', size: 'w-3 h-3', label: 'Ahmedabad', delay: 0.8 },
+                      { top: '24%', left: '37%', size: 'w-3.5 h-3.5', label: 'Delhi', delay: 0 },
+                      { top: '57%', left: '32%', size: 'w-4 h-4', label: 'Mumbai', delay: 0.4 },
+                      { top: '70%', left: '42%', size: 'w-4 h-4', label: 'Bengaluru', delay: 0.8 },
+                      { top: '46%', left: '63%', size: 'w-3 h-3', label: 'Kolkata', delay: 0.2 },
+                      { top: '63%', left: '43%', size: 'w-3.5 h-3.5', label: 'Hyderabad', delay: 0.6 },
+                      { top: '37%', left: '27%', size: 'w-3 h-3', label: 'Ahmedabad', delay: 0.3 },
+                      { top: '78%', left: '40%', size: 'w-3 h-3', label: 'Chennai', delay: 1.0 },
                     ].map((node, i) => (
-                      <motion.div 
+                      <motion.div
                         key={i}
-                        className="absolute flex flex-col items-center"
+                        className="absolute flex flex-col items-center -translate-x-1/2 -translate-y-1/2"
                         style={{ top: node.top, left: node.left }}
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
                         transition={{ delay: node.delay, duration: 0.5 }}
                       >
-                        <div className={`${node.size} rounded-full bg-nitivaani-emerald/80 shadow-[0_0_15px_rgba(16,185,129,0.5)] animate-pulse`}></div>
-                        <span className="text-[10px] font-mono text-slate-500 mt-1 bg-white/80 px-1 rounded backdrop-blur-sm">{node.label}</span>
+                        <span className="absolute inline-flex h-full w-full rounded-full bg-nitivaani-emerald/40 animate-ping"></span>
+                        <div className={`${node.size} relative rounded-full bg-nitivaani-emerald shadow-[0_0_12px_rgba(16,185,129,0.7)] ring-2 ring-white`}></div>
+                        <span className="text-[10px] font-mono font-semibold text-slate-700 mt-1 bg-white/90 px-1.5 py-0.5 rounded shadow-sm backdrop-blur-sm whitespace-nowrap">
+                          {node.label}
+                        </span>
                       </motion.div>
                     ))}
                   </div>

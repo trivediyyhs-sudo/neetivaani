@@ -65,3 +65,9 @@ id = "JWIFq__VSr3V1LzY24zMH"
 uri = "file://attached_assets/brand/nitivaani_favicon.png"
 type = "image"
 title = "Nitivaani Favicon (white background)"
+
+[[outputs]]
+id = "fKCK5GiPadpdehYpKdJdr"
+uri = "file://attached_assets/maps/india_osm_z5.png"
+type = "image"
+title = "India OSM map preview"
