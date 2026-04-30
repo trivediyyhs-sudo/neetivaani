@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Nitivaani — AI for Indian Governance"
+version = "1.0.0"
+id = "artifacts/nitivaani"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21070
+
+[services.development]
+run = "pnpm --filter @workspace/nitivaani run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/nitivaani", "run", "build" ]
+publicDir = "artifacts/nitivaani/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21070"
+BASE_PATH = "/"

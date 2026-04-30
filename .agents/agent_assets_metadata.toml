@@ -12,6 +12,36 @@ uri = "file://attached_assets/brand/nitivaani_favicon.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "jeRjQ5gZL6jDU6PR1kBKo"
+uri = "file://artifacts/nitivaani/public/hero-bg.png"
+type = "image"
+title = "Hero abstract background"
+
+[[generated]]
+id = "OAo1v0-htRBz3ck7ESdHg"
+uri = "file://artifacts/nitivaani/public/mock-citizen.png"
+type = "image"
+title = "Citizen submission portal mock"
+
+[[generated]]
+id = "hmK4yc-03xuDYNyfAL-NF"
+uri = "file://artifacts/nitivaani/public/mock-routing.png"
+type = "image"
+title = "AI routing system view mock"
+
+[[generated]]
+id = "BBYSe9vt2HqjHUSgGlrPt"
+uri = "file://artifacts/nitivaani/public/mock-dashboard.png"
+type = "image"
+title = "Department dashboard mock"
+
+[[generated]]
+id = "uFTwbqqGXS3IaTBawJ7AL"
+uri = "file://artifacts/nitivaani/public/mock-chat.png"
+type = "image"
+title = "AI assistant chat mock"
+
 [[outputs]]
 id = "S9kcXniXWdE5wZYrP14Rh"
 uri = "file://attached_assets/brand/nitivaani_logo_mark_transparent.png"
