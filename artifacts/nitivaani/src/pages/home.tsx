@@ -70,10 +70,10 @@ const TRANSLATIONS = {
 };
 
 const STATS = [
-  { label: "Projected Resolutions", value: "10M+", prefix: "" },
+  { label: "Projected Resolutions", value: "10M", prefix: "+" },
   { label: "AI Routing Accuracy", value: "99.8", prefix: "%" },
-  { label: "Response Speed", value: "12", prefix: "x Faster" },
-  { label: "Departments", value: "500+", prefix: "" }
+  { label: "Faster Response Speed", value: "12", prefix: "x" },
+  { label: "Departments Integrated", value: "500", prefix: "+" }
 ];
 
 export default function Home() {
