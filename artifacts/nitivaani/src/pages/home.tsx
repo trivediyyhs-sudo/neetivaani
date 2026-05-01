@@ -134,13 +134,13 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <header className={`sticky top-0 w-full z-40 transition-all duration-300 ${isScrolled ? "bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm" : "bg-transparent absolute"}`}>
+      <header className={`sticky top-0 w-full z-40 transition-all duration-300 bg-white/90 backdrop-blur-xl border-b border-slate-200/50 ${isScrolled ? "shadow-sm" : ""}`}>
         <div className="container mx-auto px-4 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-white shadow-sm overflow-hidden flex items-center justify-center p-1">
               <img src="/nitivaani-logo.png" alt="Nitivaani Logo" className="w-full h-full object-contain" />
             </div>
-            <span className={`font-display font-bold text-xl tracking-tight ${isScrolled ? "text-nitivaani-navy" : "text-white"}`}>
+            <span className="font-display font-bold text-xl tracking-tight text-nitivaani-navy">
               Nitivaani
             </span>
           </div>
@@ -150,7 +150,7 @@ export default function Home() {
               <a 
                 key={item} 
                 href={`#${item}`}
-                className={`text-sm font-medium transition-colors hover:text-nitivaani-saffron ${isScrolled ? "text-slate-600" : "text-slate-300"}`}
+                className="text-sm font-medium transition-colors text-slate-900 hover:text-nitivaani-saffron"
               >
                 {t.nav[item as keyof typeof t.nav]}
               </a>
@@ -159,7 +159,7 @@ export default function Home() {
 
           <div className="hidden lg:flex items-center gap-4">
             {isAuthLoading ? (
-              <div className={`h-5 w-16 rounded animate-pulse ${isScrolled ? "bg-slate-200" : "bg-white/10"}`} />
+              <div className="h-5 w-16 rounded animate-pulse bg-slate-200" />
             ) : isAuthenticated && user ? (
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-2">
@@ -175,13 +175,13 @@ export default function Home() {
                       {(user.firstName?.[0] ?? user.email?.[0] ?? "U").toUpperCase()}
                     </div>
                   )}
-                  <span className={`text-sm font-medium hidden xl:inline ${isScrolled ? "text-slate-700" : "text-white"}`}>
+                  <span className="text-sm font-medium hidden xl:inline text-slate-900">
                     {user.firstName ?? user.email ?? t.nav.account}
                   </span>
                 </div>
                 <button
                   onClick={logout}
-                  className={`text-sm font-medium transition-colors ${isScrolled ? "text-slate-600 hover:text-nitivaani-navy" : "text-slate-300 hover:text-white"}`}
+                  className="text-sm font-medium transition-colors text-slate-900 hover:text-nitivaani-navy"
                 >
                   {t.nav.logout}
                 </button>
@@ -189,7 +189,7 @@ export default function Home() {
             ) : (
               <button
                 onClick={login}
-                className={`text-sm font-medium transition-colors ${isScrolled ? "text-slate-600 hover:text-nitivaani-navy" : "text-slate-300 hover:text-white"}`}
+                className="text-sm font-medium transition-colors text-slate-900 hover:text-nitivaani-navy"
               >
                 {t.nav.login}
               </button>
@@ -197,7 +197,7 @@ export default function Home() {
             <Button 
               onClick={() => handleDemoAction("Track")}
               variant="outline" 
-              className={`border-nitivaani-emerald/30 text-nitivaani-emerald hover:bg-nitivaani-emerald/10 ${!isScrolled && "bg-transparent border-white/20 text-white hover:bg-white/10"}`}
+              className="border-nitivaani-emerald/30 text-nitivaani-emerald hover:bg-nitivaani-emerald/10"
             >
               {t.nav.track}
             </Button>
@@ -210,7 +210,7 @@ export default function Home() {
           </div>
 
           <button 
-            className={`lg:hidden p-2 ${isScrolled ? "text-nitivaani-navy" : "text-white"}`}
+            className="lg:hidden p-2 text-nitivaani-navy"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
