@@ -590,13 +590,13 @@ export default function Home() {
                   {/* City pins overlaid on the real map. Coords in % match the actual cities on the cropped India tile. */}
                   <div className="relative w-full h-full">
                     {[
-                      { top: '24%', left: '37%', size: 'w-3.5 h-3.5', label: 'Delhi', delay: 0 },
-                      { top: '57%', left: '32%', size: 'w-4 h-4', label: 'Mumbai', delay: 0.4 },
-                      { top: '70%', left: '42%', size: 'w-4 h-4', label: 'Bengaluru', delay: 0.8 },
-                      { top: '46%', left: '63%', size: 'w-3 h-3', label: 'Kolkata', delay: 0.2 },
-                      { top: '63%', left: '43%', size: 'w-3.5 h-3.5', label: 'Hyderabad', delay: 0.6 },
-                      { top: '37%', left: '27%', size: 'w-3 h-3', label: 'Ahmedabad', delay: 0.3 },
-                      { top: '78%', left: '40%', size: 'w-3 h-3', label: 'Chennai', delay: 1.0 },
+                      { top: '24%', left: '37%', size: 'w-3.5 h-3.5', delay: 0 },
+                      { top: '57%', left: '32%', size: 'w-4 h-4', delay: 0.4 },
+                      { top: '70%', left: '42%', size: 'w-4 h-4', delay: 0.8 },
+                      { top: '46%', left: '63%', size: 'w-3 h-3', delay: 0.2 },
+                      { top: '63%', left: '43%', size: 'w-3.5 h-3.5', delay: 0.6 },
+                      { top: '37%', left: '27%', size: 'w-3 h-3', delay: 0.3 },
+                      { top: '78%', left: '40%', size: 'w-3 h-3', delay: 1.0 },
                     ].map((node, i) => (
                       <motion.div
                         key={i}
@@ -609,9 +609,6 @@ export default function Home() {
                       >
                         <span className="absolute inline-flex h-full w-full rounded-full bg-nitivaani-emerald/40 animate-ping"></span>
                         <div className={`${node.size} relative rounded-full bg-nitivaani-emerald shadow-[0_0_12px_rgba(16,185,129,0.7)] ring-2 ring-white`}></div>
-                        <span className="text-[10px] font-mono font-semibold text-slate-700 mt-1 bg-white/90 px-1.5 py-0.5 rounded shadow-sm backdrop-blur-sm whitespace-nowrap">
-                          {node.label}
-                        </span>
                       </motion.div>
                     ))}
                   </div>
