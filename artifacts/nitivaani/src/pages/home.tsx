@@ -75,10 +75,11 @@ const TRANSLATIONS = {
 };
 
 const STATS = [
-  { label: "Projected Resolutions", value: "10M", prefix: "+" },
-  { label: "AI Routing Accuracy", value: "99.8", prefix: "%" },
-  { label: "Faster Response Speed", value: "12", prefix: "x" },
-  { label: "Departments Integrated", value: "500", prefix: "+" }
+  { value: "$500B", label: "AI GDP opportunity for India", sub: "McKinsey Global Institute estimate" },
+  { value: "$550B", label: "Projected AI economic value", sub: "India AI Mission 2025 target" },
+  { value: "1.4B+", label: "Citizens affected by civic gaps", sub: "Millions waiting for resolution" },
+  { value: "12x", label: "Faster grievance resolution", sub: "vs. legacy paper-based systems" },
+  { value: "99.8%", label: "AI routing accuracy", sub: "Across 500+ departments" },
 ];
 
 export default function Home() {
@@ -390,24 +391,33 @@ export default function Home() {
       </div>
 
       {/* Stats Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+      <section className="bg-nitivaani-navy py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYwIDBoLTFWNjBoMVYwek0wIDYwdjFoNjB2LTFIMHoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48L3N2Zz4=')] opacity-100 pointer-events-none"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-nitivaani-saffron/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-nitivaani-emerald/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <p className="text-center text-xs font-mono font-bold text-nitivaani-saffron uppercase tracking-[0.3em] mb-12">
+            The Scale of the Opportunity
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-0 divide-x divide-white/10">
             {STATS.map((stat, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center"
+                transition={{ delay: i * 0.08, duration: 0.5 }}
+                className="text-center px-6 py-6 group"
               >
-                <div className="text-4xl md:text-5xl font-mono font-bold text-nitivaani-navy mb-2 flex items-center justify-center">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold text-white mb-2 group-hover:text-nitivaani-saffron transition-colors duration-300">
                   {stat.value}
-                  <span className="text-nitivaani-saffron ml-1">{stat.prefix}</span>
                 </div>
-                <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">
+                <div className="text-sm font-semibold text-white/80 mb-1 leading-snug">
                   {stat.label}
+                </div>
+                <div className="text-[11px] text-white/35 font-mono uppercase tracking-wide">
+                  {stat.sub}
                 </div>
               </motion.div>
             ))}
