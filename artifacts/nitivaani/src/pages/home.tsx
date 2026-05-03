@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Menu, X, Globe, ArrowRight, ShieldCheck, Zap, 
@@ -99,12 +99,16 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [, navigate] = useLocation();
+
   const handleDemoAction = (action: string) => {
     toast({
       title: "Coming Soon",
       description: `${action} feature is currently in closed beta.`,
     });
   };
+
+  const goToSubmit = () => navigate("/submit");
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-nitivaani-emerald/30 selection:text-nitivaani-navy">
@@ -203,7 +207,7 @@ export default function Home() {
               {t.nav.track}
             </Button>
             <Button 
-              onClick={() => handleDemoAction("Submit")}
+              onClick={goToSubmit}
               className="bg-nitivaani-navy text-white hover:bg-nitivaani-navy/90 shadow-lg shadow-nitivaani-navy/20"
             >
               {t.nav.submit}
@@ -242,7 +246,7 @@ export default function Home() {
                   <Button variant="outline" onClick={() => handleDemoAction("Track")} className="w-full">
                     {t.nav.track}
                   </Button>
-                  <Button onClick={() => handleDemoAction("Submit")} className="w-full bg-nitivaani-navy">
+                  <Button onClick={goToSubmit} className="w-full bg-nitivaani-navy">
                     {t.nav.submit}
                   </Button>
                 </div>
@@ -323,7 +327,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
               <Button 
                 size="lg" 
-                onClick={() => handleDemoAction("Submit Grievance")}
+                onClick={goToSubmit}
                 className="h-14 px-8 text-base bg-white text-nitivaani-navy hover:bg-slate-100 rounded-full shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-all hover:scale-105"
               >
                 {t.hero.primaryCta}
@@ -816,7 +820,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-display font-bold text-nitivaani-navy mb-6">Ready to shape the future?</h2>
           <p className="text-xl text-nitivaani-navy/80 max-w-2xl mx-auto mb-10">Whether you're a citizen wanting to report an issue, or a government body looking to modernize.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" onClick={() => handleDemoAction("Submit")} className="bg-nitivaani-navy text-white hover:bg-slate-800 rounded-full h-14 px-8 text-base">
+            <Button size="lg" onClick={goToSubmit} className="bg-nitivaani-navy text-white hover:bg-slate-800 rounded-full h-14 px-8 text-base">
               Submit a Grievance
             </Button>
             <Button size="lg" onClick={() => handleDemoAction("Partnership")} variant="outline" className="border-nitivaani-navy text-nitivaani-navy hover:bg-nitivaani-navy/10 rounded-full h-14 px-8 text-base">
